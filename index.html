@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garry's Mod Loading Screen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Slideshow -->
+    <div class="background-container">
+        <div class="bg-slide active" style="background-image: url('img/bg1.jpg');"></div>
+        <div class="bg-slide" style="background-image: url('img/bg2.jpg');"></div>
+        <div class="bg-slide" style="background-image: url('img/bg3.jpg');"></div>
+        <div class="bg-slide" style="background-image: url('img/bg4.png');"></div>
+        <div class="vignette"></div>
+    </div>
+
+
+
+    <!-- Central Content -->
+    <div class="center-content">
+        <img src="img/logo.png" alt="Logo du Serveur" id="server-logo">
+        <div class="title-box">
+            <p class="server-desc">vitrumroleplay.fr | Roleplay Sérieux</p>
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer Progress -->
+    <div class="loading-footer">
+        <div class="audio-visualizer">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        </div>
+        <div class="progress-info">
+            <span id="loading-status">Initialisation des ressources...</span>
+            <span id="loading-percentage">0%</span>
+        </div>
+        <div class="progress-bar-wrapper">
+            <div class="progress-bar" id="progress-bar">
+                <div class="progress-glow"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Music (Locale) -->
+    <audio id="bg-music" loop>
+        <source src="music.mp3">
+        <source src="music.ogg">
+    </audio>
+    <script>
+        // Réglage du volume à 25%
+        var audio = document.getElementById("bg-music");
+        audio.volume = 0.25;
+        
+        // Essai de lecture automatique (fonctionne dans GMod)
+        var playPromise = audio.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.catch(function(error) {
+                // Si le navigateur bloque, on attend un clic pour lancer
+                document.addEventListener('click', function() {
+                    audio.play();
+                }, { once: true });
+            });
+        }
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
