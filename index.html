@@ -23,7 +23,7 @@
     <div class="center-content">
         <img src="img/logo.png" alt="Logo du Serveur" id="server-logo">
         <div class="title-box">
-            <p class="server-desc">vitrumroleplay.fr | Roleplay Sérieux</p>
+            <p class="server-desc">vitrumroleplay.fr</p>
         </div>
     </div>
 
@@ -46,19 +46,21 @@
         </div>
     </div>
 
-    <!-- Background Music (Locale) -->
+
+<!-- Background Music (Locale) -->
+<!-- 
     <audio id="bg-music" loop>
         <source src="music.mp3">
         <source src="music.ogg">
     </audio>
     <script>
-        // Réglage du volume à 10%
+        // Réglage du volume à 25%
         var audio = document.getElementById("bg-music");
-        audio.volume = 0.05;
-        
+        audio.volume = 0.10;
+
         // Essai de lecture automatique (fonctionne dans GMod)
         var playPromise = audio.play();
-        
+
         if (playPromise !== undefined) {
             playPromise.catch(function(error) {
                 // Si le navigateur bloque, on attend un clic pour lancer
@@ -68,6 +70,7 @@
             });
         }
     </script>
+-->
 
     <script src="js/script.js"></script>
 </body>
